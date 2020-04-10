@@ -8,7 +8,7 @@ require("dotenv").config();
 
 const uri = process.env.DB_PATH;
 
-const users = ["Nayem", "Khan", "Akhtar", "Akhtaruzzaman"];
+//const users = ["Nayem", "Khan", "Akhtar", "Akhtaruzzaman"];
 
 const app = express();
 
