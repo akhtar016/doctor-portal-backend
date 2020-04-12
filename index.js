@@ -15,6 +15,15 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+
+
+
+
+
 let client = new MongoClient(uri, { useNewUrlParser: true });
 
 app.get("/patientInfo", (req, res) => {
@@ -53,7 +62,7 @@ app.get("/users/:id", (req, res) => {
 
 //post
 
-app.post("/addUser", (req, res) => {
+app.post("/addPatients", (req, res) => {
   const user = req.body;
 
   client.connect((err) => {
